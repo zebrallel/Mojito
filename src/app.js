@@ -21,7 +21,9 @@ const App = () => {
         <Router>
             <div>
                 <div className={styles.sidebar}>
-                    <div className={styles.item}><Link to="/">Home</Link></div>
+                    <div className={styles.item}>
+                        <Link to="/">Home</Link>
+                    </div>
                     <div className={styles.item}>
                         <Link to="/pageA">PageA</Link>
                     </div>
