@@ -4,6 +4,7 @@ dist/
 
 # others
 npm-debug.log
+yarn-error.log
 .DS_Store
 .cache
 .idea

@@ -1,0 +1,21 @@
+@charset "UTF-8";
+
+@import "reset";
+
+.sidebar {
+    position: fixed;
+    width: 180px;
+    border-right: #ccc solid 1px;
+    top: 0;
+    bottom: 0;
+    padding-top: 50px;
+}
+
+.item {
+    padding: 4px 8px;
+}
+
+.main {
+    margin-left: 200px;
+    padding-top: 50px;
+}
