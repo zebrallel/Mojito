@@ -1,7 +1,7 @@
 {
     "name": "Mojito",
     "version": "1.0.0",
-    "description": "A lab for researching the world",
+    "description": "A lab for doing some research",
     "main": "index.js",
     "author": "xuejian.xu",
     "license": "MIT",
