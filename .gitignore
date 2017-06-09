@@ -1,0 +1,10 @@
+# prd staff
+node_modules/
+dist/
+
+# others
+npm-debug.log
+.DS_Store
+.cache
+.idea
+
