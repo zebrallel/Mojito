@@ -7,7 +7,7 @@
 import React from 'react';
 
 const PageB = () => {
-    return <h1>PageB</h1>;
+    return <div>PageB</div>;
 };
 
 export default PageB;

@@ -9,11 +9,11 @@ import styles from 'styles/main.scss';
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
+import { HashRouter as Router, Route, Link } from 'react-router-dom';
 
 // Pages
 import Home from 'pages/Home';
-import PageA from 'pages/PageA';
+import Children from 'pages/Children';
 import PageB from 'pages/PageB';
 
 const App = () => {
@@ -25,7 +25,7 @@ const App = () => {
                         <Link to="/">Home</Link>
                     </div>
                     <div className={styles.item}>
-                        <Link to="/pageA">PageA</Link>
+                        <Link to="/children">React.Children</Link>
                     </div>
                     <div className={styles.item}>
                         <Link to="/pageB">PageB</Link>
@@ -33,7 +33,7 @@ const App = () => {
                 </div>
                 <div className={styles.main}>
                     <Route exact path="/" component={Home} />
-                    <Route path="/pageA" component={PageA} />
+                    <Route path="/children" component={Children} />
                     <Route path="/pageB" component={PageB} />
                 </div>
             </div>
