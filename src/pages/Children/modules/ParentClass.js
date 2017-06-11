@@ -1,6 +1,6 @@
 import React from 'react';
 
-import SubClass from '../SubClass';
+import SubClass from './SubClass';
 
 const ParentClass = () => {
     return (

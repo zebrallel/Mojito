@@ -14,7 +14,7 @@ import { HashRouter as Router, Route, Link } from 'react-router-dom';
 // Pages
 import Home from 'pages/Home';
 import Children from 'pages/Children';
-import PageB from 'pages/PageB';
+import HighOrderComponent from 'pages/HighOrderComponent';
 
 const App = () => {
     return (
@@ -28,13 +28,13 @@ const App = () => {
                         <Link to="/children">React.Children</Link>
                     </div>
                     <div className={styles.item}>
-                        <Link to="/pageB">PageB</Link>
+                        <Link to="/highOrderComponent">High Order Component</Link>
                     </div>
                 </div>
                 <div className={styles.main}>
                     <Route exact path="/" component={Home} />
                     <Route path="/children" component={Children} />
-                    <Route path="/pageB" component={PageB} />
+                    <Route path="/highOrderComponent" component={HighOrderComponent} />
                 </div>
             </div>
         </Router>
