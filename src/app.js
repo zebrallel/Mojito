@@ -15,6 +15,7 @@ import { HashRouter as Router, Route, Link } from 'react-router-dom';
 import Home from 'pages/Home';
 import Children from 'pages/Children';
 import HighOrderComponent from 'pages/HighOrderComponent';
+import ASync from 'pages/ASync';
 
 const App = () => {
     return (
@@ -30,11 +31,15 @@ const App = () => {
                     <div className={styles.item}>
                         <Link to="/highOrderComponent">High Order Component</Link>
                     </div>
+                    <div className={styles.item}>
+                        <Link to="/async">ASync</Link>
+                    </div>
                 </div>
                 <div className={styles.main}>
                     <Route exact path="/" component={Home} />
                     <Route path="/children" component={Children} />
                     <Route path="/highOrderComponent" component={HighOrderComponent} />
+                    <Route path="/async" component={ASync} />
                 </div>
             </div>
         </Router>

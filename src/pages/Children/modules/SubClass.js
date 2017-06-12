@@ -20,7 +20,7 @@ function getContent(props) {
         case 3:
             console.dir(Children.toArray(props.children));
 
-            return <div>toArray</div>;
+            return <div>To array, see console</div>;
     }
 }
 
