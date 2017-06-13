@@ -17,6 +17,7 @@ import Children from 'pages/Children';
 import HighOrderComponent from 'pages/HighOrderComponent';
 import ASync from 'pages/ASync';
 import Diff from 'pages/Diff';
+import Axios from 'pages/Axios';
 
 const App = () => {
     return (
@@ -28,6 +29,7 @@ const App = () => {
                     <div className={styles.item}><Link to="/highOrderComponent">High Order Component</Link></div>
                     <div className={styles.item}><Link to="/async">ASync</Link></div>
                     <div className={styles.item}><Link to="/diff">Diff</Link></div>
+                    <div className={styles.item}><Link to="/axios">Axios</Link></div>
                 </div>
                 <div className={styles.main}>
                     <Route exact path="/" component={Home} />
@@ -35,6 +37,7 @@ const App = () => {
                     <Route path="/highOrderComponent" component={HighOrderComponent} />
                     <Route path="/async" component={ASync} />
                     <Route path="/diff" component={Diff} />
+                    <Route path="/axios" component={Axios} />
                 </div>
             </div>
         </Router>
