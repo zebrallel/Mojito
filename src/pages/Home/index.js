@@ -5,9 +5,17 @@
  */
 
 import React from 'react';
+import styles from './style.scss';
 
 const Home = () => {
-    return <div>Home Page</div>;
+    return (
+        <div>
+            <div>Home Page</div>
+            <div className={styles.box}>
+                <div className={styles.content}>content</div>
+            </div>
+        </div>
+    )
 };
 
 export default Home;
