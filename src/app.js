@@ -8,8 +8,11 @@ import styles from 'styles/main.scss';
 
 import React from 'react';
 import ReactDOM from 'react-dom';
-
 import { HashRouter as Router, Route, Link } from 'react-router-dom';
+import {Provider} from 'react-redux';
+
+// Init Store
+import store from './store';
 
 // Pages
 import Home from 'pages/Home';
@@ -18,6 +21,7 @@ import HighOrderComponent from 'pages/HighOrderComponent';
 import ASync from 'pages/ASync';
 import Diff from 'pages/Diff';
 import Axios from 'pages/Axios';
+import TodoList from 'pages/TodoList';
 
 const App = () => {
     return (
@@ -30,6 +34,7 @@ const App = () => {
                     <div className={styles.item}><Link to="/async">ASync</Link></div>
                     <div className={styles.item}><Link to="/diff">Diff</Link></div>
                     <div className={styles.item}><Link to="/axios">Axios</Link></div>
+                    <div className={styles.item}><Link to="/todolist">TodoList</Link></div>
                 </div>
                 <div className={styles.main}>
                     <Route exact path="/" component={Home} />
@@ -38,10 +43,19 @@ const App = () => {
                     <Route path="/async" component={ASync} />
                     <Route path="/diff" component={Diff} />
                     <Route path="/axios" component={Axios} />
+                    <Route path="/todolist" component={TodoList} />
                 </div>
             </div>
         </Router>
     );
 };
 
-ReactDOM.render(<App />, document.getElementById('root'));
+function render(content){
+    ReactDOM.render(content, document.getElementById('root'));
+}
+
+render(
+    <Provider store={store}>
+        <App />
+    </Provider>
+);
