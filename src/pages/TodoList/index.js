@@ -1,10 +1,13 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import {addTodoItem, minusTodoItem} from './actions';
+import {bindActionCreators} from 'redux';
 
 class TodoList extends Component{
     constructor(props){
         super(props);
+
+        console.dir(props);
 
         this.state = {
             value : ''
@@ -13,13 +16,13 @@ class TodoList extends Component{
 
     addItemHandler(){
         const {value} = this.state;
-        const {dispatch} = this.props;
+        const {addTodoItem} = this.props;
 
         if(!value){
             return;
         }
 
-        dispatch(addTodoItem(value));
+        addTodoItem(value);
 
         this.setState({
             value : ''
@@ -67,4 +70,11 @@ const mapStateToProps = (state)=>{
     return {todo}
 };
 
-export default connect(mapStateToProps)(TodoList);
+const mapDispatchToProps = (dispatch, props)=>{
+    return {
+        addTodoItem : bindActionCreators(addTodoItem, dispatch),
+        minusTodoItem : bindActionCreators(minusTodoItem, dispatch)
+    }
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(TodoList);
