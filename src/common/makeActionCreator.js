@@ -1,5 +1,4 @@
-export default (...args) => (...params) => {
-    const type = args.shift();
+export default (type, ...args) => (...params) => {
     const action = {};
 
     args.forEach((item, idx) => {

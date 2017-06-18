@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
-import {addTodoItem} from './actions';
+import {addTodoItem, minusTodoItem} from './actions';
 
 class TodoList extends Component{
     constructor(props){
@@ -15,7 +15,21 @@ class TodoList extends Component{
         const {value} = this.state;
         const {dispatch} = this.props;
 
+        if(!value){
+            return;
+        }
+
         dispatch(addTodoItem(value));
+
+        this.setState({
+            value : ''
+        });
+    }
+
+    minusItemHandler(index){
+        const {dispatch} = this.props;
+
+        dispatch(minusTodoItem(index));
     }
 
     render(){
@@ -32,8 +46,13 @@ class TodoList extends Component{
                 <h2>items:</h2>
                 <ul>
                     {
-                        todos.map((item)=>{
-                            return <li key={item}>{item}</li>;
+                        todos.map((item, index)=>{
+                            return (
+                                <li key={`${item}_${index}`}>
+                                    <span>{item}</span>
+                                    <button onClick={()=>{this.minusItemHandler(index)}}>-</button>
+                                </li>
+                            )
                         })
                     }
                 </ul>
