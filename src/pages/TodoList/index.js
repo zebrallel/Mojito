@@ -7,8 +7,6 @@ class TodoList extends Component{
     constructor(props){
         super(props);
 
-        console.dir(props);
-
         this.state = {
             value : ''
         }
@@ -30,9 +28,9 @@ class TodoList extends Component{
     }
 
     minusItemHandler(index){
-        const {dispatch} = this.props;
+        const {minusTodoItem} = this.props;
 
-        dispatch(minusTodoItem(index));
+        minusTodoItem(index);
     }
 
     render(){
