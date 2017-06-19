@@ -46,6 +46,9 @@ module.exports = {
         }
     },
     plugins: [
+        new webpack.DefinePlugin({
+            'process.env.NODE_ENV': '"develop"'
+        }),
         new webpack.optimize.CommonsChunkPlugin({
             name: 'vendors'
         }),
