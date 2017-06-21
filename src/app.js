@@ -22,6 +22,7 @@ import ASync from 'pages/ASync';
 import Diff from 'pages/Diff';
 import Axios from 'pages/Axios';
 import TodoList from 'pages/TodoList';
+import Context from 'pages/Context';
 
 const App = () => {
     return (
@@ -35,6 +36,7 @@ const App = () => {
                     <div className={styles.item}><Link to="/diff">Diff</Link></div>
                     <div className={styles.item}><Link to="/axios">Axios</Link></div>
                     <div className={styles.item}><Link to="/todolist">TodoList</Link></div>
+                    <div className={styles.item}><Link to="/context">Context</Link></div>
                 </div>
                 <div className={styles.main}>
                     <Route exact path="/" component={Home} />
@@ -44,6 +46,7 @@ const App = () => {
                     <Route path="/diff" component={Diff} />
                     <Route path="/axios" component={Axios} />
                     <Route path="/todolist" component={TodoList} />
+                    <Route path="/context" component={Context} />
                 </div>
             </div>
         </Router>
