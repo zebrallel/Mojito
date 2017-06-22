@@ -4,10 +4,65 @@
  * @date: 2017/6/12.
  */
 
-import React from 'react';
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
 
-const ASync = function(){
-    return <div>To be continue...</div>
+import { actions } from './actions';
+
+class ASync extends Component {
+    addInput;
+    minusInput;
+
+    addNumHandler() {
+        const { value } = this.addInput;
+        const { doIncrease } = this.props;
+
+        doIncrease(parseInt(value));
+    }
+
+    minusNumHandler() {
+        const { value } = this.minusInput;
+        const { doDecrease } = this.props;
+
+        doDecrease(parseInt(value));
+    }
+
+    render() {
+        const { count } = this.props;
+
+        return (
+            <div>
+                Count : {count}
+                <div>
+                    <input
+                        type="number"
+                        ref={dom => {
+                            this.addInput = dom;
+                        }}
+                    />
+                    <button onClick={::this.addNumHandler}>add</button>
+                </div>
+                <div>
+                    <input
+                        type="number"
+                        ref={dom => {
+                            this.minusInput = dom;
+                        }}
+                    />
+                    <button onClick={::this.minusNumHandler}>minus</button>
+                </div>
+            </div>
+        );
+    }
+}
+
+const mapStateToProps = state => {
+    return { count: state.async.count };
 };
 
-export default ASync;
+const mapDispatchToProps = dispatch => {
+    return bindActionCreators(actions, dispatch);
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(ASync);
