@@ -1,0 +1,81 @@
+.box{
+    display: flex;
+    width: 600px;
+    background: #abc;
+}
+
+//demo1
+
+.base{
+    height: 100px;
+}
+
+.left{
+    composes: base;
+
+    flex-grow: 2;
+    background: orange;
+}
+
+.right{
+    composes: base;
+
+    flex-grow: 1;
+    background: dodgerblue;
+}
+
+.contentBase{
+    display: inline-block;
+    border: #333 solid 1px;
+    height: 30px;
+    box-sizing: border-box;
+}
+
+.contentLeft{
+    composes: contentBase;
+
+    width: 80px;
+}
+
+.contentRight{
+    composes: contentBase;
+
+    width: 220px;
+}
+
+//demo2
+.left2{
+    composes: base;
+
+    flex-grow: 2;
+    flex-basis: 60px;
+    background: orange;
+}
+
+.right2{
+    composes: base;
+
+    flex-grow: 1;
+    flex-basis: 240px;
+    background: dodgerblue;
+}
+
+//demo3
+.demo3{
+    display: flex;
+    width: 500px;
+    border: #abc solid 10px;
+}
+
+.demo3Left{
+    flex: 0 0 400px;
+    //flex-basis: 400px;
+    //flex-shrink: 0;
+
+    background: coral;
+}
+
+.demo3Right{
+    flex-grow: 1;
+    background: cadetblue;
+}
