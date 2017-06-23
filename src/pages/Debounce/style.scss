@@ -1,0 +1,25 @@
+.box{
+    display: flex;
+    width: 800px;
+    border: #333 solid 1px;
+    border-left: 0;
+    margin-bottom: 10px;
+}
+
+.cell{
+    box-sizing: border-box;
+    flex-grow: 1;
+    border-left: #333 solid 1px;
+    height: 10px;
+}
+
+.title{
+    padding: 10px;
+}
+
+.area{
+    width: 300px;
+    height: 100px;
+    border: #333 solid 1px;
+    margin-bottom: 10px;
+}

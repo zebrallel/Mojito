@@ -24,6 +24,7 @@ import Axios from 'pages/Axios';
 import TodoList from 'pages/TodoList';
 import Context from 'pages/Context';
 import Flex from 'pages/Flex';
+import Debounce from 'pages/Debounce';
 
 const App = () => {
     return (
@@ -39,6 +40,7 @@ const App = () => {
                     <div className={styles.item}><Link to="/todolist">TodoList</Link></div>
                     <div className={styles.item}><Link to="/context">Context</Link></div>
                     <div className={styles.item}><Link to="/flex">Flex</Link></div>
+                    <div className={styles.item}><Link to="/debounce">Debounce</Link></div>
                 </div>
                 <div className={styles.main}>
                     <Route exact path="/" component={Home} />
@@ -50,6 +52,7 @@ const App = () => {
                     <Route path="/todolist" component={TodoList} />
                     <Route path="/context" component={Context} />
                     <Route path="/flex" component={Flex} />
+                    <Route path="/debounce" component={Debounce} />
                 </div>
             </div>
         </Router>
