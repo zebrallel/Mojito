@@ -4,6 +4,8 @@ import propTypes from 'prop-types';
 
 import _debounce from 'lodash/debounce';
 import _throttle from 'lodash/throttle';
+import myDebounce from './modules/debounce';
+
 const boxes = [];
 
 for (let i = 0; i < 100; i++) {
@@ -35,6 +37,8 @@ class Debounce extends Component {
                 });
             case 'throttle':
                 return _throttle(handler, 300, { trailing: false });
+            case 'myDebounce':
+                return myDebounce(handler, 300);
         }
     }
 
@@ -111,6 +115,15 @@ class Debounce extends Component {
                     }}
                 />
                 <label htmlFor="throttle">throttle</label>
+                <input
+                    id="myDebounce"
+                    type="radio"
+                    name="type"
+                    onClick={() => {
+                        this.setState({ type: 'myDebounce' });
+                    }}
+                />
+                <label htmlFor="myDebounce">myDebounce</label>
             </div>
         );
     }
