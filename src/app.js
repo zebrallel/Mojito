@@ -48,13 +48,19 @@ class App extends Component{
             [styles.sidebar] : true,
             [styles.sidebarHide] : collapsed
         });
+        const iconBack = classNames({
+            [styles.icon] : true,
+            [styles.i_back] : true,
+            [styles.tag] : true,
+            [styles.reverse] : collapsed
+        });
 
         return (
             <Router>
                 <div>
                     <div className={sidebarClass}>
                         <div className={styles.nav} onClick={::this.collapseHandler}>
-                            {collapsed ? '>' : '<'}
+                            <span className={iconBack} />
                         </div>
                         <div className={styles.item}><Link to="/">Home</Link></div>
                         <div className={styles.item}><Link to="/children">React.Children</Link></div>
@@ -67,7 +73,7 @@ class App extends Component{
                         <div className={styles.item}><Link to="/flex">Flex</Link></div>
                         <div className={styles.item}><Link to="/debounce">Debounce</Link></div>
                     </div>
-                    <div className={styles.main}>
+                    <div className={styles.main} style={collapsed ? {marginLeft: 20} : {marginLeft: 220}}>
                         <Route exact path="/" component={Home} />
                         <Route path="/children" component={Children} />
                         <Route path="/highOrderComponent" component={HighOrderComponent} />

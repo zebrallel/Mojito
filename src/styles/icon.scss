@@ -1,0 +1,28 @@
+@font-face {
+    font-family: "iconfont";
+    src: url("../../icons/dist/iconfont.eot?bfcc31a9d72c1f3a03e14da361c44c48?#iefix") format("embedded-opentype"),
+url("../../icons/dist/iconfont.woff?bfcc31a9d72c1f3a03e14da361c44c48") format("woff"),
+url("../../icons/dist/iconfont.ttf?bfcc31a9d72c1f3a03e14da361c44c48") format("truetype");
+}
+
+.icon {
+    display: inline-block;
+    line-height: 1;
+}
+
+.icon:before {
+    font-family: iconfont !important;
+    font-style: normal;
+    font-weight: normal !important;
+    vertical-align: top;
+}
+
+    .i_back:before {
+        content: "\f101";
+    }
+    .i_close:before {
+        content: "\f102";
+    }
+    .i_edit:before {
+        content: "\f103";
+    }

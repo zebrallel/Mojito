@@ -1,6 +1,7 @@
 @charset "UTF-8";
 
 @import "reset";
+@import "icon";
 
 .sidebar {
     position: fixed;
@@ -15,20 +16,32 @@
     left: -200px;
 }
 
+.tag{
+    margin-top: 10px;
+}
+
+.reverse{
+    transform: rotate(180deg);
+}
+
 .item {
     padding: 4px 8px;
 }
 
 .main {
-    margin-left: 220px;
     padding-top: 50px;
 }
 
 .nav{
     position: absolute;
     height: 40px;
-    width: 40px;
-    right: -40px;
+    width: 20px;
+    right: -20px;
     top: 0;
-    background: #abc;
+    background: #cdd2d6;
+    border-radius: 0 8px 8px 0;
+
+    &:hover{
+        cursor: pointer;
+    }
 }

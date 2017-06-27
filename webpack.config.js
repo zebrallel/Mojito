@@ -36,6 +36,13 @@ module.exports = {
                     },
                     'sass-loader'
                 ]
+            },
+            {
+                test: /\.(png|woff|woff2|eot|ttf|svg)$/,
+                loader: 'url-loader',
+                options: {
+                    limit : 8192
+                }
             }
         ]
     },
