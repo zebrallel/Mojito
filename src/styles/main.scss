@@ -11,6 +11,10 @@
     padding-top: 50px;
 }
 
+.sidebarHide {
+    left: -200px;
+}
+
 .item {
     padding: 4px 8px;
 }
@@ -18,4 +22,13 @@
 .main {
     margin-left: 220px;
     padding-top: 50px;
+}
+
+.nav{
+    position: absolute;
+    height: 40px;
+    width: 40px;
+    right: -40px;
+    top: 0;
+    background: #abc;
 }
