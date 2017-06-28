@@ -1,5 +1,5 @@
 /**
- * @fileOverView: ASync operation
+ * @fileOverView: Counter operation
  * @author: xuejian.xu
  * @date: 2017/6/12.
  */
@@ -10,7 +10,7 @@ import { bindActionCreators } from 'redux';
 
 import { actions } from './actions';
 
-class ASync extends Component {
+class Counter extends Component {
     addInput;
     minusInput;
 
@@ -58,11 +58,11 @@ class ASync extends Component {
 }
 
 const mapStateToProps = state => {
-    return { count: state.async.count };
+    return { count: state.counter.count };
 };
 
 const mapDispatchToProps = dispatch => {
     return bindActionCreators(actions, dispatch);
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(ASync);
+export default connect(mapStateToProps, mapDispatchToProps)(Counter);

@@ -4,7 +4,7 @@ const initState = {
     count: 0
 };
 
-export const async = (state = initState, action) => {
+export const counter = (state = initState, action) => {
     switch (action.type) {
         case Action.INCREMENT:
             state.count += action.num;

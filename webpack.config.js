@@ -18,7 +18,17 @@ module.exports = {
                 include: path.resolve(__dirname, 'src'),
                 loader: 'babel-loader',
                 options: {
-                    presets: ['react', 'stage-0']
+                    presets: ['react', 'stage-0'],
+                    plugins: [
+                        [
+                            'transform-runtime',
+                            {
+                                helpers: false,
+                                polyfill: false,
+                                regenerator: true
+                            }
+                        ]
+                    ]
                 }
             },
             {
@@ -41,7 +51,7 @@ module.exports = {
                 test: /\.(png|woff|woff2|eot|ttf|svg)$/,
                 loader: 'url-loader',
                 options: {
-                    limit : 8192
+                    limit: 8192
                 }
             }
         ]

@@ -12,6 +12,36 @@ class Diff extends Component {
         };
     }
 
+    componentDidMount(){
+        // async & await语法
+        var sleep = function (time) {
+            return new Promise(function (resolve, reject) {
+                setTimeout(function () {
+                    resolve();
+                }, time);
+            })
+        };
+
+        var start = async function (time) {
+            // 在这里使用起来就像同步代码那样直观
+            console.log('start');
+
+            await sleep(time);
+
+            return {result : 'done'}
+        };
+
+        var test = async function(){
+            for(let i=0; i<5; i++){
+                var res = await start(2000);
+
+                console.log(res.result);
+            }
+        };
+
+        test();
+    }
+
     render() {
         const { counter } = this.state;
 
