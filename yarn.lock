@@ -3841,6 +3841,10 @@ redux-logger@^3.0.6:
   dependencies:
     deep-diff "^0.3.5"
 
+redux-thunk@^2.2.0:
+  version "2.2.0"
+  resolved "http://registry.npm.taobao.org/redux-thunk/download/redux-thunk-2.2.0.tgz#e615a16e16b47a19a515766133d1e3e99b7852e5"
+
 redux@^3.6.0:
   version "3.7.0"
   resolved "http://registry.npm.taobao.org/redux/download/redux-3.7.0.tgz#07a623cafd92eee8abe309d13d16538f6707926f"

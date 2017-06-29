@@ -27,6 +27,7 @@ import Context from 'pages/Context';
 import Flex from 'pages/Flex';
 import Debounce from 'pages/Debounce';
 import Ensure from 'pages/Ensure';
+import Thunk from 'pages/Thunk';
 
 class App extends Component{
     constructor(props){
@@ -74,6 +75,7 @@ class App extends Component{
                         <div className={styles.item}><Link to="/flex">Flex</Link></div>
                         <div className={styles.item}><Link to="/debounce">Debounce</Link></div>
                         <div className={styles.item}><Link to="/ensure">Ensure</Link></div>
+                        <div className={styles.item}><Link to="/thunk">Thunk</Link></div>
                     </div>
                     <div className={styles.main} style={collapsed ? {marginLeft: 20} : {marginLeft: 220}}>
                         <Route exact path="/" component={Home} />
@@ -87,6 +89,7 @@ class App extends Component{
                         <Route path="/flex" component={Flex} />
                         <Route path="/debounce" component={Debounce} />
                         <Route path="/ensure" component={Ensure} />
+                        <Route path="/thunk" component={Thunk} />
                     </div>
                 </div>
             </Router>
