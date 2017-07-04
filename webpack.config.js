@@ -1,6 +1,7 @@
 const path = require('path');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
     entry: {
@@ -33,11 +34,10 @@ module.exports = {
             },
             {
                 test: /\.scss$/,
-                use: [
-                    'style-loader',
-                    'css-loader',
-                    'sass-loader'
-                ]
+                use: ExtractTextPlugin.extract({
+                    fallback: 'style-loader',
+                    use: ['css-loader', 'sass-loader']
+                })
             },
             {
                 test: /\.(png|woff|woff2|eot|ttf|svg)$/,
@@ -58,6 +58,7 @@ module.exports = {
         new webpack.DefinePlugin({
             'process.env.NODE_ENV': '"develop"'
         }),
+        new ExtractTextPlugin('style.css'),
         new webpack.optimize.CommonsChunkPlugin({
             name: 'vendors'
         }),
