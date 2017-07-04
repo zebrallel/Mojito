@@ -1,4 +1,4 @@
-import styles from './style.scss';
+import './style.scss';
 import React, { Component } from 'react';
 import propTypes from 'prop-types';
 
@@ -44,8 +44,8 @@ class Debounce extends Component {
 
     render() {
         return (
-            <div>
-                <div className={styles.title}>
+            <div id="Debounce">
+                <div className="title">
                     这是一个没有使用debounce/throttle的例子：
                 </div>
                 <Line
@@ -141,11 +141,11 @@ class Line extends Component {
 
         return (
             <div>
-                <div onMouseMove={onMouseMove} className={styles.area}>
+                <div onMouseMove={onMouseMove} className="area">
                     Move area
                 </div>
                 <div
-                    className={styles.box}
+                    className="box"
                     ref={dom => {
                         this.box = dom;
                     }}
@@ -155,7 +155,7 @@ class Line extends Component {
                             <div
                                 key={item}
                                 data-flag={item}
-                                className={styles.cell}
+                                className="cell"
                             />
                         );
                     })}

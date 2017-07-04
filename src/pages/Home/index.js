@@ -5,14 +5,14 @@
  */
 
 import React from 'react';
-import styles from './style.scss';
+import './style.scss';
 
 const Home = () => {
     return (
-        <div>
+        <div id="Home">
             <div>Home Page</div>
-            <div className={styles.box}>
-                <div className={styles.content}>content</div>
+            <div className="box">
+                <div className="content">content</div>
             </div>
         </div>
     )

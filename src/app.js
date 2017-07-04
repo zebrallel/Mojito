@@ -4,7 +4,7 @@
  * @date: 2017/6/9.
  */
 
-import styles from 'styles/main.scss';
+import 'styles/main.scss';
 
 import React, {Component} from 'react';
 import ReactDOM from 'react-dom';
@@ -47,37 +47,37 @@ class App extends Component{
     render(){
         const {collapsed} = this.state;
         const sidebarClass = classNames({
-            [styles.sidebar] : true,
-            [styles.sidebarHide] : collapsed
+            'sidebar' : true,
+            'sidebarHide' : collapsed
         });
         const iconBack = classNames({
-            [styles.icon] : true,
-            [styles.i_back] : true,
-            [styles.tag] : true,
-            [styles.reverse] : collapsed
+            'icon' : true,
+            'i-back' : true,
+            'tag' : true,
+            'reverse' : collapsed
         });
 
         return (
             <Router>
                 <div>
                     <div className={sidebarClass}>
-                        <div className={styles.nav} onClick={::this.collapseHandler}>
+                        <div className="nav" onClick={::this.collapseHandler}>
                             <span className={iconBack} />
                         </div>
-                        <div className={styles.item}><Link to="/">Home</Link></div>
-                        <div className={styles.item}><Link to="/children">React.Children</Link></div>
-                        <div className={styles.item}><Link to="/highOrderComponent">High Order Component</Link></div>
-                        <div className={styles.item}><Link to="/counter">Counter</Link></div>
-                        <div className={styles.item}><Link to="/diff">Diff</Link></div>
-                        <div className={styles.item}><Link to="/axios">Axios</Link></div>
-                        <div className={styles.item}><Link to="/todolist">TodoList</Link></div>
-                        <div className={styles.item}><Link to="/context">Context</Link></div>
-                        <div className={styles.item}><Link to="/flex">Flex</Link></div>
-                        <div className={styles.item}><Link to="/debounce">Debounce</Link></div>
-                        <div className={styles.item}><Link to="/ensure">Ensure</Link></div>
-                        <div className={styles.item}><Link to="/thunk">Thunk</Link></div>
+                        <div className="item"><Link to="/">Home</Link></div>
+                        <div className="item"><Link to="/children">React.Children</Link></div>
+                        <div className="item"><Link to="/highOrderComponent">High Order Component</Link></div>
+                        <div className="item"><Link to="/counter">Counter</Link></div>
+                        <div className="item"><Link to="/diff">Diff</Link></div>
+                        <div className="item"><Link to="/axios">Axios</Link></div>
+                        <div className="item"><Link to="/todolist">TodoList</Link></div>
+                        <div className="item"><Link to="/context">Context</Link></div>
+                        <div className="item"><Link to="/flex">Flex</Link></div>
+                        <div className="item"><Link to="/debounce">Debounce</Link></div>
+                        <div className="item"><Link to="/ensure">Ensure</Link></div>
+                        <div className="item"><Link to="/thunk">Thunk</Link></div>
                     </div>
-                    <div className={styles.main} style={collapsed ? {marginLeft: 20} : {marginLeft: 220}}>
+                    <div className="main" style={collapsed ? {marginLeft: 20} : {marginLeft: 220}}>
                         <Route exact path="/" component={Home} />
                         <Route path="/children" component={Children} />
                         <Route path="/highOrderComponent" component={HighOrderComponent} />

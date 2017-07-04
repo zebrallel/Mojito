@@ -1,81 +1,77 @@
-.box{
-    display: flex;
-    width: 600px;
-    background: #abc;
-}
+#Flex{
+    .box{
+        display: flex;
+        width: 600px;
+        background: #abc;
+    }
 
-//demo1
+    //demo1
+    .left{
+        height: 100px;
 
-.base{
-    height: 100px;
-}
+        flex-grow: 2;
+        background: orange;
+    }
 
-.left{
-    composes: base;
+    .right{
+        height: 100px;
 
-    flex-grow: 2;
-    background: orange;
-}
+        flex-grow: 1;
+        background: dodgerblue;
+    }
 
-.right{
-    composes: base;
+    .contentLeft{
+        display: inline-block;
+        border: #333 solid 1px;
+        height: 30px;
+        box-sizing: border-box;
 
-    flex-grow: 1;
-    background: dodgerblue;
-}
+        width: 80px;
+    }
 
-.contentBase{
-    display: inline-block;
-    border: #333 solid 1px;
-    height: 30px;
-    box-sizing: border-box;
-}
+    .contentRight{
+        display: inline-block;
+        border: #333 solid 1px;
+        height: 30px;
+        box-sizing: border-box;
 
-.contentLeft{
-    composes: contentBase;
+        width: 220px;
+    }
 
-    width: 80px;
-}
+    //demo2
+    .left2{
+        height: 100px;
 
-.contentRight{
-    composes: contentBase;
+        flex-grow: 2;
+        flex-basis: 60px;
+        background: orange;
+    }
 
-    width: 220px;
-}
+    .right2{
+        height: 100px;
 
-//demo2
-.left2{
-    composes: base;
+        flex-grow: 1;
+        flex-basis: 240px;
+        background: dodgerblue;
+    }
 
-    flex-grow: 2;
-    flex-basis: 60px;
-    background: orange;
-}
+    //demo3
+    .demo3{
+        display: flex;
+        width: 500px;
+        border: #abc solid 10px;
+    }
 
-.right2{
-    composes: base;
+    .demo3Left{
+        flex: 0 0 400px;
+        //flex-basis: 400px;
+        //flex-shrink: 0;
 
-    flex-grow: 1;
-    flex-basis: 240px;
-    background: dodgerblue;
-}
+        background: coral;
+    }
 
-//demo3
-.demo3{
-    display: flex;
-    width: 500px;
-    border: #abc solid 10px;
-}
-
-.demo3Left{
-    flex: 0 0 400px;
-    //flex-basis: 400px;
-    //flex-shrink: 0;
-
-    background: coral;
-}
-
-.demo3Right{
-    flex-grow: 1;
-    background: cadetblue;
+    .demo3Right{
+        flex-grow: 1;
+        background: cadetblue;
+    }
 }

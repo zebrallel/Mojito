@@ -14,7 +14,7 @@ webfontsGenerator({
     cssTemplate: path.join(__dirname, 'template.hbs'),
     cssFontsUrl: '../../icons/dist',
     templateOptions: {
-        classPrefix: 'i_',
+        classPrefix: 'i-',
         baseSelector: 'icon'
     }
 }, function(error){
