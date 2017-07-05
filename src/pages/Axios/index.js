@@ -49,7 +49,7 @@ class Axios extends Component{
 
 
         return (
-            <div>
+            <div className="m-page">
                 <h3>Axios Demo</h3>
                 <div>
                     <button onClick={::this.fetch}>Click me to send a request</button>

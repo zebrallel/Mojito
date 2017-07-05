@@ -39,7 +39,7 @@ class Thunk extends Component {
               </button>;
 
         return (
-            <div>
+            <div className="m-page">
                 <header>Thunk Demo</header>
                 <br />
                 <div>Num : {num}</div>

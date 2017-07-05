@@ -13,7 +13,7 @@ const HighOrderComponent = ()=>{
     const WrapperClass = Wrapper(Sub);
 
     return (
-        <div>
+        <div className="m-page">
             <h2>High order component</h2>
             <p>有两种主流的在 React 中实现高阶组件的方法：属性代理（Props Proxy）和 反向继承（Inheritance Inversion）</p>
             <br/>

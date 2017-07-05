@@ -5,7 +5,7 @@ import React, {Component} from 'react';
 class Flex extends Component{
     render(){
         return (
-            <div id="Flex">
+            <div id="Flex" className="m-page">
                 <div>flex-grow: 这是属性设置的其实是剩余空间分配的比例值，而不是当前元素自身所占的比例</div>
                 <br/>
                 <div className="box">

@@ -28,13 +28,14 @@ import Flex from 'pages/Flex';
 import Debounce from 'pages/Debounce';
 import Ensure from 'pages/Ensure';
 import Thunk from 'pages/Thunk';
+import ListViewDemo from 'pages/ListViewDemo';
 
 class App extends Component{
     constructor(props){
         super(props);
 
         this.state = {
-            collapsed : false
+            collapsed : true
         }
     }
 
@@ -42,6 +43,14 @@ class App extends Component{
         this.setState({
             collapsed: !this.state.collapsed
         });
+    }
+
+    linkHandler(eve){
+        if(eve.target.tagName === 'A'){
+            this.setState({
+                collapsed : true
+            });
+        }
     }
 
     render(){
@@ -60,7 +69,7 @@ class App extends Component{
         return (
             <Router>
                 <div>
-                    <div className={sidebarClass}>
+                    <div className={sidebarClass} onClick={::this.linkHandler}>
                         <div className="nav" onClick={::this.collapseHandler}>
                             <span className={iconBack} />
                         </div>
@@ -76,8 +85,9 @@ class App extends Component{
                         <div className="item"><Link to="/debounce">Debounce</Link></div>
                         <div className="item"><Link to="/ensure">Ensure</Link></div>
                         <div className="item"><Link to="/thunk">Thunk</Link></div>
+                        <div className="item"><Link to="/listViewDemo">ListViewDemo</Link></div>
                     </div>
-                    <div className="main" style={collapsed ? {marginLeft: 20} : {marginLeft: 220}}>
+                    <div className="main">
                         <Route exact path="/" component={Home} />
                         <Route path="/children" component={Children} />
                         <Route path="/highOrderComponent" component={HighOrderComponent} />
@@ -90,6 +100,7 @@ class App extends Component{
                         <Route path="/debounce" component={Debounce} />
                         <Route path="/ensure" component={Ensure} />
                         <Route path="/thunk" component={Thunk} />
+                        <Route path="/listViewDemo" component={ListViewDemo} />
                     </div>
                 </div>
             </Router>

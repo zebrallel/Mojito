@@ -44,7 +44,7 @@ class Debounce extends Component {
 
     render() {
         return (
-            <div id="Debounce">
+            <div id="Debounce" className="m-page">
                 <div className="title">
                     这是一个没有使用debounce/throttle的例子：
                 </div>

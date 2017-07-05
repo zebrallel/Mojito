@@ -46,7 +46,7 @@ class Diff extends Component {
         const { counter } = this.state;
 
         return (
-            <div>
+            <div className="m-page">
                 <h2>When react diff happens?</h2>
                 <div>
                     counter : {counter}

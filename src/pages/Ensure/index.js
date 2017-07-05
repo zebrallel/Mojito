@@ -23,7 +23,7 @@ class Ensure extends Component {
         const {comps} = this.state;
 
         return (
-            <div>
+            <div className="m-page">
                 <div>Ensure Demo</div>
                 <button onClick={::this.load}>Click me to load modules</button>
                 <div>Component : </div>

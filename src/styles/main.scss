@@ -2,7 +2,9 @@
 
 @import "reset";
 @import "icon";
+@import "common";
 
+//app
 .sidebar {
     position: fixed;
     width: 200px;
@@ -10,38 +12,36 @@
     top: 0;
     bottom: 0;
     padding-top: 50px;
+    z-index: 1;
+    background: #fff;
+
+    .nav{
+        position: absolute;
+        height: 40px;
+        width: 20px;
+        right: -20px;
+        top: 0;
+        background: #cdd2d6;
+        border-radius: 0 8px 8px 0;
+
+        &:hover{
+            cursor: pointer;
+        }
+
+        .tag{
+            margin-top: 10px;
+        }
+
+        .reverse{
+            transform: rotate(180deg);
+        }
+    }
+
+    .item {
+        padding: 4px 8px;
+    }
 }
 
 .sidebarHide {
     left: -200px;
-}
-
-.tag{
-    margin-top: 10px;
-}
-
-.reverse{
-    transform: rotate(180deg);
-}
-
-.item {
-    padding: 4px 8px;
-}
-
-.main {
-    padding-top: 50px;
-}
-
-.nav{
-    position: absolute;
-    height: 40px;
-    width: 20px;
-    right: -20px;
-    top: 0;
-    background: #cdd2d6;
-    border-radius: 0 8px 8px 0;
-
-    &:hover{
-        cursor: pointer;
-    }
 }

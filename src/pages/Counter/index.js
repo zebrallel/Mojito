@@ -32,7 +32,7 @@ class Counter extends Component {
         const { count } = this.props;
 
         return (
-            <div>
+            <div className="m-page">
                 Count : {count}
                 <div>
                     <input

@@ -10,7 +10,7 @@ import ParentClass from './modules/ParentClass';
 
 const Children = () => {
     return (
-        <div>
+        <div className="m-page">
             <h2>
                 React.Children : React.Children provides utilities for dealing
                 with the this.props.children opaque data structure.

@@ -38,7 +38,7 @@ class TodoList extends Component {
         const { value } = this.state;
 
         return (
-            <div>
+            <div className="m-page">
                 <h2>TodoList</h2>
                 <br />
                 <input
