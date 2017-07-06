@@ -17,6 +17,14 @@ class Super extends Component{
         console.log(`Super ${this.props.id} will unmount!`);
     }
 
+    componentWillUpdate(){
+        console.log('super will update');
+    }
+
+    componentDidUpdate(){
+        console.log('super did update!');
+    }
+
     render(){
         console.log(`Super ${this.props.id} do render!`);
 

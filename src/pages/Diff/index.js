@@ -39,7 +39,7 @@ class Diff extends Component {
             }
         };
 
-        test();
+        //test();
     }
 
     render() {
