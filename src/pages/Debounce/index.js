@@ -142,7 +142,7 @@ class Line extends Component {
         return (
             <div>
                 <div onMouseMove={onMouseMove} className="area">
-                    Move area
+                    Shake your mouse here after start
                 </div>
                 <div
                     className="box"

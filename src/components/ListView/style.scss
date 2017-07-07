@@ -1,5 +1,11 @@
 .c-listview{
+    overflow: hidden;
+
     .head-tip{
-        margin-top: -20px;
+        margin-top: -25px;
+        line-height: 25px;
+        color: #333;
+        text-align: center;
+        font-size: 13px;
     }
 }
