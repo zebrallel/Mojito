@@ -10,11 +10,6 @@ const REFRESH_SUCCESS = '刷新成功';
 class ListView extends Component {
     onScroll(iscroll){
         console.log(iscroll.y);
-
-        if(iscroll.y > 38){
-            console.log('ssssssss');
-            iscroll.options.disableTouch = true;
-        }
     }
 
     onScrollEnd(iscroll){
