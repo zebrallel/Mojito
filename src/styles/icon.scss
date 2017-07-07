@@ -1,8 +1,8 @@
 @font-face {
     font-family: "iconfont";
-    src: url("../../icons/dist/iconfont.eot?ab23474395cc29a3bf445107e67337ce?#iefix") format("embedded-opentype"),
-url("../../icons/dist/iconfont.woff?ab23474395cc29a3bf445107e67337ce") format("woff"),
-url("../../icons/dist/iconfont.ttf?ab23474395cc29a3bf445107e67337ce") format("truetype");
+    src: url("../../icons/dist/iconfont.eot?becdb874cf35feefdb18fdedb9d8864d?#iefix") format("embedded-opentype"),
+url("../../icons/dist/iconfont.woff?becdb874cf35feefdb18fdedb9d8864d") format("woff"),
+url("../../icons/dist/iconfont.ttf?becdb874cf35feefdb18fdedb9d8864d") format("truetype");
 }
 
 .icon {
@@ -17,12 +17,15 @@ url("../../icons/dist/iconfont.ttf?ab23474395cc29a3bf445107e67337ce") format("tr
     vertical-align: top;
 }
 
-    .i-back:before {
+    .i-arrow_down:before {
         content: "\f101";
     }
-    .i-close:before {
+    .i-back:before {
         content: "\f102";
     }
-    .i-edit:before {
+    .i-close:before {
         content: "\f103";
+    }
+    .i-edit:before {
+        content: "\f104";
     }
