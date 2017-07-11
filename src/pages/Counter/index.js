@@ -8,7 +8,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
-import { actions } from './actions';
+import actions from './actions';
 
 class Counter extends Component {
     addInput;
@@ -16,16 +16,16 @@ class Counter extends Component {
 
     addNumHandler() {
         const { value } = this.addInput;
-        const { doIncrease } = this.props;
+        const { increase } = this.props;
 
-        doIncrease(parseInt(value));
+        increase(parseInt(value));
     }
 
     minusNumHandler() {
         const { value } = this.minusInput;
-        const { doDecrease } = this.props;
+        const { decrease } = this.props;
 
-        doDecrease(parseInt(value));
+        decrease(parseInt(value));
     }
 
     render() {

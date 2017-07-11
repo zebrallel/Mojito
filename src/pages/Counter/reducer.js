@@ -1,20 +1,27 @@
-import { MAP as Action } from './actions';
+import { handleActions } from 'redux-actions';
+import {INCREASE, DECREASE} from './constants';
+import _cloneDeep from 'lodash/cloneDeep';
 
 const initState = {
-    count: 0
+    count: 100
 };
 
-export const counter = (state = initState, action) => {
-    switch (action.type) {
-        case Action.INCREMENT:
-            state.count += action.num;
+export const counter = handleActions({
+    [INCREASE] : (state, action)=>{
+        const nState = _cloneDeep(state);
+        const {num} = action.payload;
 
-            return Object.assign({}, state);
-        case Action.DECREMENT:
-            state.count -= action.num;
+        nState.count += num;
 
-            return Object.assign({}, state);
+        return Object.assign({}, nState)
+    },
+
+    [DECREASE] : (state, action)=>{
+        const nState = _cloneDeep(state);
+        const {num} = action.payload;
+
+        nState.count -= num;
+
+        return Object.assign({}, nState);
     }
-
-    return state;
-};
+}, initState);

@@ -1,11 +1,7 @@
-import makeActionCreator from '../../common/makeActionCreator';
+import {createActions} from 'redux-actions';
+import {INCREASE, DECREASE} from './constants';
 
-export const MAP = {
-    INCREMENT : 'INCREMENT',
-    DECREMENT : 'DECREMENT'
-};
-
-export const actions = {
-    doIncrease : makeActionCreator(MAP.INCREMENT, 'num'),
-    doDecrease : makeActionCreator(MAP.DECREMENT, 'num')
-};
+export default createActions({
+    [INCREASE]: num => ({num}),
+    [DECREASE]: num => ({num})
+})
