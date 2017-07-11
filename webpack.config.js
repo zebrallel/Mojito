@@ -33,6 +33,28 @@ module.exports = {
                 }
             },
             {
+                test: /\.tsx?$/,
+                use : [
+                    {
+                        loader : 'babel-loader',
+                        options: {
+                            presets: ['react', 'stage-0'],
+                            plugins: [
+                                [
+                                    'transform-runtime',
+                                    {
+                                        helpers: false,
+                                        polyfill: false,
+                                        regenerator: true
+                                    }
+                                ]
+                            ]
+                        }
+                    },
+                    'awesome-typescript-loader'
+                ]
+            },
+            {
                 test: /\.scss$/,
                 use: ExtractTextPlugin.extract({
                     fallback: 'style-loader',
@@ -52,7 +74,8 @@ module.exports = {
         alias: {
             pages: path.resolve(__dirname, 'src/pages/'),
             styles: path.resolve(__dirname, 'src/styles/')
-        }
+        },
+        extensions: ['.ts', '.tsx', '.js']
     },
     plugins: [
         new webpack.DefinePlugin({

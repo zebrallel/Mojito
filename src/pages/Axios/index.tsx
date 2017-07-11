@@ -2,24 +2,29 @@ import React, {Component} from 'react';
 import axios from 'axios';
 import _isEmpty from 'lodash/isEmpty';
 
-class Axios extends Component{
-    constructor(props){
-        super(props);
+interface IAxiosConfig {
+    params : {
+        [propName : string] : string
+    }
+}
+
+class Axios extends Component<{}, {}>{
+    constructor(){
+        super();
 
         this.state = {
             person : {}
         }
     }
 
-
     componentDidMount(){
-        axios.interceptors.request.use(function (config) {
+        axios.interceptors.request.use(function (config : IAxiosConfig) {
             console.log(config);
 
             config.params['addByInterceptor'] = '123';
 
             return config;
-        }, function (error) {
+        }, function (error : any) {
             // Do something with request error
             console.error(error);
         });
@@ -30,7 +35,7 @@ class Axios extends Component{
             this.setState({
                 person : res.data
             })
-        }).catch(function (error) {
+        }).catch(function (error : any) {
             console.error(error);
         });
     }
@@ -39,14 +44,13 @@ class Axios extends Component{
         axios.all([
             axios.get('http://localhost:9999/axios/get/100'),
             axios.get('http://localhost:9999/axios/get/200')
-        ]).then((res)=>{
+        ]).then((res : any)=>{
             console.dir(res);
         });
     }
 
     render(){
         const {person} = this.state;
-
 
         return (
             <div className="m-page">
