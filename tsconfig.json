@@ -5,9 +5,14 @@
         "noImplicitAny": true,
         "module": "es6",
         "target": "es6",
-        "jsx": "preserve",
-        "allowSyntheticDefaultImports": true
+        "jsx": "react",
+        "allowSyntheticDefaultImports": true,
+        "skipLibCheck": true,
+        "experimentalDecorators": true
     },
+    "typeRoots": [
+        "./node_modules/@types"
+    ],
     "include": [
         "./src"
     ],

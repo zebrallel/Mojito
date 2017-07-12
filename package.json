@@ -45,6 +45,7 @@
         "redux-thunk": "^2.2.0",
         "sass-loader": "^6.0.5",
         "style-loader": "^0.17.0",
+        "typescript": "^2.4.1",
         "url-loader": "^0.5.9",
         "webfonts-generator": "^0.4.0",
         "webpack": "^2.6.1",

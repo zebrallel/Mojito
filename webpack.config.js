@@ -34,25 +34,8 @@ module.exports = {
             },
             {
                 test: /\.tsx?$/,
-                use : [
-                    {
-                        loader : 'babel-loader',
-                        options: {
-                            presets: ['react', 'stage-0'],
-                            plugins: [
-                                [
-                                    'transform-runtime',
-                                    {
-                                        helpers: false,
-                                        polyfill: false,
-                                        regenerator: true
-                                    }
-                                ]
-                            ]
-                        }
-                    },
-                    'awesome-typescript-loader'
-                ]
+                loader: 'awesome-typescript-loader',
+                options: { useBabel: true }
             },
             {
                 test: /\.scss$/,

@@ -31,13 +31,13 @@ class Axios extends Component<{}, {}>{
     }
 
     fetch(){
-        axios.get('http://localhost:9999/axios/get/100', {params : {id: 100}}).then((res)=>{
-            this.setState({
-                person : res.data
-            })
-        }).catch(function (error : any) {
-            console.error(error);
-        });
+        // axios.get('http://localhost:9999/axios/get/100', {params : {id: 100}}).then((res)=>{
+        //     this.setState({
+        //         person : res.data
+        //     })
+        // }).catch(function (error : any) {
+        //     console.error(error);
+        // });
     }
 
     fetchParallel(){
@@ -56,7 +56,7 @@ class Axios extends Component<{}, {}>{
             <div className="m-page">
                 <h3>Axios Demo</h3>
                 <div>
-                    <button onClick={::this.fetch}>Click me to send a request</button>
+                    <button onClick={this.fetch.bind(this)}>Click me to send a request</button>
                     {
                         !_isEmpty(person) && <div>
                             <p>name : {person.name}</p>
@@ -66,7 +66,7 @@ class Axios extends Component<{}, {}>{
                     }
                 </div>
                 <div>
-                    <button onClick={::this.fetchParallel}>click me to send a parallel request</button>
+                    <button onClick={this.fetchParallel.bind(this)}>click me to send a parallel request</button>
                     see console
                 </div>
             </div>
