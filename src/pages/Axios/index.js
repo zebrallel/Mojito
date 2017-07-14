@@ -2,49 +2,44 @@ import React, {Component} from 'react';
 import axios from 'axios';
 import _isEmpty from 'lodash/isEmpty';
 
-interface IAxiosConfig {
-    params : {
-        [propName : string] : string
-    }
-}
-
-class Axios extends Component<{}, {}>{
-    constructor(){
-        super();
+class Axios extends Component{
+    constructor(props){
+        super(props);
 
         this.state = {
             person : {}
         }
     }
 
+
     componentDidMount(){
-        axios.interceptors.request.use(function (config : IAxiosConfig) {
+        axios.interceptors.request.use(function (config) {
             console.log(config);
 
             config.params['addByInterceptor'] = '123';
 
             return config;
-        }, function (error : any) {
+        }, function (error) {
             // Do something with request error
             console.error(error);
         });
     }
 
     fetch(){
-        // axios.get('http://localhost:9999/axios/get/100', {params : {id: 100}}).then((res)=>{
-        //     this.setState({
-        //         person : res.data
-        //     })
-        // }).catch(function (error : any) {
-        //     console.error(error);
-        // });
+        axios.get('http://localhost:9999/axios/get/100', {params : {id: 100}}).then((res)=>{
+            this.setState({
+                person : res.data
+            })
+        }).catch(function (error) {
+            console.error(error);
+        });
     }
 
     fetchParallel(){
         axios.all([
             axios.get('http://localhost:9999/axios/get/100'),
             axios.get('http://localhost:9999/axios/get/200')
-        ]).then((res : any)=>{
+        ]).then((res)=>{
             console.dir(res);
         });
     }
@@ -52,11 +47,12 @@ class Axios extends Component<{}, {}>{
     render(){
         const {person} = this.state;
 
+
         return (
             <div className="m-page">
                 <h3>Axios Demo</h3>
                 <div>
-                    <button onClick={this.fetch.bind(this)}>Click me to send a request</button>
+                    <button onClick={::this.fetch}>Click me to send a request</button>
                     {
                         !_isEmpty(person) && <div>
                             <p>name : {person.name}</p>
@@ -66,7 +62,7 @@ class Axios extends Component<{}, {}>{
                     }
                 </div>
                 <div>
-                    <button onClick={this.fetchParallel.bind(this)}>click me to send a parallel request</button>
+                    <button onClick={::this.fetchParallel}>click me to send a parallel request</button>
                     see console
                 </div>
             </div>
