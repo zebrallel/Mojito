@@ -33,11 +33,6 @@ module.exports = {
                 }
             },
             {
-                test: /\.tsx?$/,
-                loader: 'awesome-typescript-loader',
-                options: { useBabel: true }
-            },
-            {
                 test: /\.scss$/,
                 use: ExtractTextPlugin.extract({
                     fallback: 'style-loader',
