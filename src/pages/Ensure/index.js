@@ -12,9 +12,7 @@ class Ensure extends Component {
 
     load(){
         require.ensure([], (require)=>{
-            const module = require('./modules/moduleA');
-
-            this.state.comps.push(module.default);
+            this.state.comps.push(require('./modules/moduleA').default);
             this.setState({});
         });
     }

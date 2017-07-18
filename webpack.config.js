@@ -2,11 +2,12 @@ const path = require('path');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
+// const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 
 module.exports = {
     entry: {
         main: path.resolve(__dirname, 'src/app.js'),
-        vendors: ['react', 'react-dom']
+        vendors: ['react', 'react-dom', 'redux', 'react-redux', 'react-router-dom']
     },
     output: {
         path: path.resolve(__dirname, 'dist'),
@@ -14,6 +15,11 @@ module.exports = {
     },
     module: {
         rules: [
+            // {
+            //     test: /\.js$/,
+            //     use: ["source-map-loader"],
+            //     enforce: "pre"
+            // },
             {
                 test: /\.jsx?$/,
                 include: path.resolve(__dirname, 'src'),
@@ -68,6 +74,9 @@ module.exports = {
             template: 'dist/index.ejs'
         }),
         new webpack.HotModuleReplacementPlugin()
+        // new UglifyJSPlugin({
+        //     sourceMap: true
+        // })
     ],
     devServer: {
         hot: true,

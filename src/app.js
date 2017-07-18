@@ -47,6 +47,8 @@ class App extends Component{
 
     linkHandler(eve){
         if(eve.target.tagName === 'A'){
+            debugger
+
             this.setState({
                 collapsed : true
             });
