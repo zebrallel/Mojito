@@ -15,11 +15,11 @@ module.exports = {
     },
     module: {
         rules: [
-            // {
-            //     test: /\.js$/,
-            //     use: ["source-map-loader"],
-            //     enforce: "pre"
-            // },
+            {
+                test: /\.js$/,
+                use: ["source-map-loader"],
+                enforce: "pre"
+            },
             {
                 test: /\.jsx?$/,
                 include: path.resolve(__dirname, 'src'),
