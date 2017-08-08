@@ -10,9 +10,7 @@ import './style.scss';
 const Home = () => {
     return (
         <div id="Home">
-            <div className="box">
-                <div className="content">Home Page</div>
-            </div>
+            <div>Home Page</div>
         </div>
     )
 };

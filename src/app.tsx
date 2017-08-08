@@ -10,7 +10,14 @@ import classNames from 'classnames';
 import store from './store';
 
 // Pages
-import Home from './pages/Home';
+import Home from './pages/Home/index';
+import ListViewDemo from './pages/ListViewDemo/index';
+import Counter from './pages/Counter/index';
+import Debounce from './pages/Debounce/index';
+import Ensure from './pages/Ensure/index';
+import HighOrderComponent from './pages/HighOrderComponent/index';
+import Thunk from './pages/Thunk/index';
+import Flex from './pages/Flex/index';
 
 interface IAppState {
     collapsed : boolean
@@ -37,6 +44,8 @@ class App extends Component<any, IAppState>{
                 collapsed : true
             });
         }
+
+        this.collapseHandler();
     }
 
     render(){
@@ -60,9 +69,24 @@ class App extends Component<any, IAppState>{
                             <span className={iconBack} />
                         </div>
                         <div className="item"><Link to="/">Home</Link></div>
+                        <div className="item"><Link to="/listViewDemo">ListViewDemo</Link></div>
+                        <div className="item"><Link to="/counter">Counter</Link></div>
+                        <div className="item"><Link to="/debounce">Debounce</Link></div>
+                        <div className="item"><Link to="/ensure">Ensure</Link></div>
+                        <div className="item"><Link to="/flex">Flex</Link></div>
+                        <div className="item"><Link to="/highOrderComponent">HighOrderComponent</Link></div>
+                        <div className="item"><Link to="/thunk">Thunk</Link></div>
+
                     </div>
                     <div className="main">
                         <Route exact path="/" component={Home} />
+                        <Route path="/listViewDemo" component={ListViewDemo} />
+                        <Route path="/counter" component={Counter} />
+                        <Route path="/debounce" component={Debounce} />
+                        <Route path="/ensure" component={Ensure} />
+                        <Route path="/flex" component={Flex} />
+                        <Route path="/highOrderComponent" component={HighOrderComponent} />
+                        <Route path="/thunk" component={Thunk} />
                     </div>
                 </div>
             </Router>
