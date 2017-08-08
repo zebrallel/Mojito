@@ -55,6 +55,10 @@
   version "16.0.0"
   resolved "http://registry.npm.taobao.org/@types/react/download/@types/react-16.0.0.tgz#fec7e6302e11c1cd307129d8ce1e6d5dca4a0283"
 
+"@types/redux-actions@^1.2.7":
+  version "1.2.7"
+  resolved "http://registry.npm.taobao.org/@types/redux-actions/download/@types/redux-actions-1.2.7.tgz#72c6fa373353058371eba363713d796e5b85b03e"
+
 "@types/redux@^3.6.0":
   version "3.6.0"
   resolved "http://registry.npm.taobao.org/@types/redux/download/@types/redux-3.6.0.tgz#f1ebe1e5411518072e4fdfca5c76e16e74c1399a"
