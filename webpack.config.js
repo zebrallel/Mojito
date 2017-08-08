@@ -2,11 +2,10 @@ const path = require('path');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
-// const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 
 module.exports = {
     entry: {
-        main: path.resolve(__dirname, 'src/app.js'),
+        main: path.resolve(__dirname, 'src/app'),
         vendors: ['react', 'react-dom', 'redux', 'react-redux', 'react-router-dom']
     },
     output: {
@@ -16,27 +15,22 @@ module.exports = {
     module: {
         rules: [
             {
-                test: /\.js$/,
-                use: ["source-map-loader"],
-                enforce: "pre"
+                test: /\.tsx?$/,
+                include: path.resolve(__dirname, 'src'),
+                loader: [
+                    'babel-loader',
+                    'ts-loader'
+                ]
             },
             {
                 test: /\.jsx?$/,
                 include: path.resolve(__dirname, 'src'),
-                loader: 'babel-loader',
-                options: {
-                    presets: ['react', 'stage-0'],
-                    plugins: [
-                        [
-                            'transform-runtime',
-                            {
-                                helpers: false,
-                                polyfill: false,
-                                regenerator: true
-                            }
-                        ]
-                    ]
-                }
+                loader: 'babel-loader'
+            },
+            {
+                test: /\.js$/,
+                use: ["source-map-loader"],
+                enforce: "pre"
             },
             {
                 test: /\.scss$/,
@@ -56,10 +50,10 @@ module.exports = {
     },
     resolve: {
         alias: {
-            pages: path.resolve(__dirname, 'src/pages/'),
-            styles: path.resolve(__dirname, 'src/styles/')
+            styles: path.resolve(__dirname, 'src/styles/'),
+            components: path.resolve(__dirname, 'src/components')
         },
-        extensions: ['.ts', '.tsx', '.js']
+        extensions: ['.tsx', '.ts', '.js']
     },
     plugins: [
         new webpack.DefinePlugin({
@@ -74,9 +68,6 @@ module.exports = {
             template: 'dist/index.ejs'
         }),
         new webpack.HotModuleReplacementPlugin()
-        // new UglifyJSPlugin({
-        //     sourceMap: true
-        // })
     ],
     devServer: {
         hot: true,

@@ -1,6 +1,6 @@
 import './style.scss';
 import React from 'react';
-import ListView from "../../components/ListView/index";
+import ListView from "components/ListView/index";
 
 const data = [];
 
