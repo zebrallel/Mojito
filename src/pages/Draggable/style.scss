@@ -1,14 +1,16 @@
 #Draggable{
   .tabs{
     border: #e5e5e5 solid 1px;
-    display: flex;
+    overflow: hidden;
 
     .tab{
-      flex-grow: 1;
+      float: left;
+      text-align: center;
       margin: 4px;
       line-height: 30px;
       border: #e5e5e5 solid 1px;
       cursor: pointer;
+      width: 100px;
     }
   }
 }

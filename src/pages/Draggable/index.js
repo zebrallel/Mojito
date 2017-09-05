@@ -26,7 +26,7 @@ class DraggableDemo extends Component {
     return (
       <div id="Draggable" className="m-page">
         <div className="m-title">Draggable Demo</div>
-        <SortableList axis="xy" items={tabs} onSortEnd={this.onSortEndHandler.bind(this)} />
+        <SortableList helperClass="m-drag-item" axis="xy" items={tabs} onSortEnd={this.onSortEndHandler.bind(this)} />
       </div>
     );
   }

@@ -16,3 +16,12 @@ input, button{
     background: #498acc;
     color: #fff;
 }
+
+.m-drag-item{
+  width: 100px;
+  cursor: pointer;
+  line-height: 30px;
+  margin: 4px;
+  text-align: center;
+  border: #e5e5e5 solid 1px;
+}
