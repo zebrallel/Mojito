@@ -15,14 +15,6 @@ module.exports = {
     module: {
         rules: [
             {
-                test: /\.tsx?$/,
-                include: path.resolve(__dirname, 'src'),
-                loader: [
-                    'babel-loader',
-                    'ts-loader'
-                ]
-            },
-            {
                 test: /\.jsx?$/,
                 include: path.resolve(__dirname, 'src'),
                 loader: 'babel-loader'

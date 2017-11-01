@@ -13,16 +13,6 @@
         "icon": "node icons/index.js"
     },
     "dependencies": {
-        "@types/classnames": "^2.2.0",
-        "@types/iscroll": "^5.2.0",
-        "@types/lodash": "^4.14.71",
-        "@types/react": "^16.0.0",
-        "@types/react-dom": "^15.5.2",
-        "@types/react-redux": "^4.4.47",
-        "@types/react-router-dom": "^4.0.7",
-        "@types/redux": "^3.6.0",
-        "@types/redux-actions": "^1.2.7",
-        "awesome-typescript-loader": "^3.2.2",
         "axios": "^0.16.2",
         "babel-core": "^6.24.1",
         "babel-loader": "^7.0.0",

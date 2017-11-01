@@ -20,11 +20,7 @@ import Thunk from './pages/Thunk/index';
 import Flex from './pages/Flex/index';
 import Draggable from './pages/Draggable/index'
 
-interface IAppState {
-  collapsed: boolean;
-}
-
-class App extends Component<any, IAppState> {
+class App extends Component {
   constructor() {
     super();
 
@@ -39,7 +35,7 @@ class App extends Component<any, IAppState> {
     });
   }
 
-  linkHandler(eve: Event) {
+  linkHandler(eve) {
     if (eve.srcElement && eve.srcElement.tagName === 'A') {
       this.setState({
         collapsed: true
