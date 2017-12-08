@@ -19,6 +19,7 @@ import HighOrderComponent from './pages/HighOrderComponent/index';
 import Thunk from './pages/Thunk/index';
 import Flex from './pages/Flex/index';
 import Draggable from './pages/Draggable/index'
+import SVG from './pages/SVG';
 
 class App extends Component {
   constructor() {
@@ -92,6 +93,9 @@ class App extends Component {
             <div className="item">
               <Link to="/draggable">Draggable</Link>
             </div>
+            <div className="item">
+              <link to="/svg">SVG</link>
+            </div>
           </div>
           <div className="main">
             <Route exact path="/" component={Home} />
@@ -103,6 +107,7 @@ class App extends Component {
             <Route path="/highOrderComponent" component={HighOrderComponent} />
             <Route path="/thunk" component={Thunk} />
             <Route path="/draggable" component={Draggable} />
+            <Route path="/svg" component={SVG} />
           </div>
         </div>
       </Router>
