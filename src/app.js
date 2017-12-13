@@ -18,106 +18,106 @@ import Ensure from './pages/Ensure/index';
 import HighOrderComponent from './pages/HighOrderComponent/index';
 import Thunk from './pages/Thunk/index';
 import Flex from './pages/Flex/index';
-import Draggable from './pages/Draggable/index'
+import Draggable from './pages/Draggable/index';
 import SVG from './pages/SVG';
 
 class App extends Component {
-  constructor() {
-    super();
+    constructor() {
+        super();
 
-    this.state = {
-      collapsed: true
-    };
-  }
-
-  collapseHandler() {
-    this.setState({
-      collapsed: !this.state.collapsed
-    });
-  }
-
-  linkHandler(eve) {
-    if (eve.srcElement && eve.srcElement.tagName === 'A') {
-      this.setState({
-        collapsed: true
-      });
+        this.state = {
+            collapsed: true
+        };
     }
 
-    this.collapseHandler();
-  }
+    collapseHandler() {
+        this.setState({
+            collapsed: !this.state.collapsed
+        });
+    }
 
-  render() {
-    const { collapsed } = this.state;
-    const sidebarClass = classNames({
-      sidebar: true,
-      sidebarHide: collapsed
-    });
-    const iconBack = classNames({
-      icon: true,
-      'i-back': true,
-      tag: true,
-      reverse: collapsed
-    });
+    linkHandler(eve) {
+        if (eve.srcElement && eve.srcElement.tagName === 'A') {
+            this.setState({
+                collapsed: true
+            });
+        }
 
-    return (
-      <Router>
-        <div>
-          <div className={sidebarClass} onClick={this.linkHandler.bind(this)}>
-            <div className="nav" onClick={this.collapseHandler.bind(this)}>
-              <span className={iconBack} />
-            </div>
-            <div className="item">
-              <Link to="/">Home</Link>
-            </div>
-            <div className="item">
-              <Link to="/listViewDemo">ListViewDemo</Link>
-            </div>
-            <div className="item">
-              <Link to="/counter">Counter</Link>
-            </div>
-            <div className="item">
-              <Link to="/debounce">Debounce</Link>
-            </div>
-            <div className="item">
-              <Link to="/ensure">Ensure</Link>
-            </div>
-            <div className="item">
-              <Link to="/flex">Flex</Link>
-            </div>
-            <div className="item">
-              <Link to="/highOrderComponent">HighOrderComponent</Link>
-            </div>
-            <div className="item">
-              <Link to="/thunk">Thunk</Link>
-            </div>
-            <div className="item">
-              <Link to="/draggable">Draggable</Link>
-            </div>
-            <div className="item">
-              <link to="/svg">SVG</link>
-            </div>
-          </div>
-          <div className="main">
-            <Route exact path="/" component={Home} />
-            <Route path="/listViewDemo" component={ListViewDemo} />
-            <Route path="/counter" component={Counter} />
-            <Route path="/debounce" component={Debounce} />
-            <Route path="/ensure" component={Ensure} />
-            <Route path="/flex" component={Flex} />
-            <Route path="/highOrderComponent" component={HighOrderComponent} />
-            <Route path="/thunk" component={Thunk} />
-            <Route path="/draggable" component={Draggable} />
-            <Route path="/svg" component={SVG} />
-          </div>
-        </div>
-      </Router>
-    );
-  }
+        this.collapseHandler();
+    }
+
+    render() {
+        const { collapsed } = this.state;
+        const sidebarClass = classNames({
+            sidebar: true,
+            sidebarHide: collapsed
+        });
+        const iconBack = classNames({
+            icon: true,
+            'i-back': true,
+            tag: true,
+            reverse: collapsed
+        });
+
+        return (
+            <Router>
+                <div>
+                    <div className={sidebarClass} onClick={this.linkHandler.bind(this)}>
+                        <div className="nav" onClick={this.collapseHandler.bind(this)}>
+                            <span className={iconBack} />
+                        </div>
+                        <div className="item">
+                            <Link to="/">Home</Link>
+                        </div>
+                        <div className="item">
+                            <Link to="/listViewDemo">ListViewDemo</Link>
+                        </div>
+                        <div className="item">
+                            <Link to="/counter">Counter</Link>
+                        </div>
+                        <div className="item">
+                            <Link to="/debounce">Debounce</Link>
+                        </div>
+                        <div className="item">
+                            <Link to="/ensure">Ensure</Link>
+                        </div>
+                        <div className="item">
+                            <Link to="/flex">Flex</Link>
+                        </div>
+                        <div className="item">
+                            <Link to="/highOrderComponent">HighOrderComponent</Link>
+                        </div>
+                        <div className="item">
+                            <Link to="/thunk">Thunk</Link>
+                        </div>
+                        <div className="item">
+                            <Link to="/draggable">Draggable</Link>
+                        </div>
+                        <div className="item">
+                            <link to="/svg">SVG</link>
+                        </div>
+                    </div>
+                    <div className="main">
+                        <Route exact path="/" component={Home} />
+                        <Route path="/listViewDemo" component={ListViewDemo} />
+                        <Route path="/counter" component={Counter} />
+                        <Route path="/debounce" component={Debounce} />
+                        <Route path="/ensure" component={Ensure} />
+                        <Route path="/flex" component={Flex} />
+                        <Route path="/highOrderComponent" component={HighOrderComponent} />
+                        <Route path="/thunk" component={Thunk} />
+                        <Route path="/draggable" component={Draggable} />
+                        <Route path="/svg" component={SVG} />
+                    </div>
+                </div>
+            </Router>
+        );
+    }
 }
 
 ReactDOM.render(
-  <Provider store={store}>
-    <App />
-  </Provider>,
-  document.getElementById('root')
+    <Provider store={store}>
+        <App />
+    </Provider>,
+    document.getElementById('root')
 );
