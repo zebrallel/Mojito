@@ -2,7 +2,7 @@ import 'styles/main.scss';
 
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
-import { HashRouter as Router, Route, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import classNames from 'classnames';
 
@@ -20,13 +20,14 @@ import Thunk from './pages/Thunk/index';
 import Flex from './pages/Flex/index';
 import Draggable from './pages/Draggable/index';
 import SVG from './pages/SVG';
+import SubRouter from './pages/SubRouter';
 
 class App extends Component {
     constructor() {
         super();
 
         this.state = {
-            collapsed: true
+            collapsed: false 
         };
     }
 
@@ -94,7 +95,10 @@ class App extends Component {
                             <Link to="/draggable">Draggable</Link>
                         </div>
                         <div className="item">
-                            <link to="/svg">SVG</link>
+                            <Link to="/svg">SVG</Link>
+                        </div>
+                        <div className="item">
+                            <Link to="/subrouter">SubRouter</Link>
                         </div>
                     </div>
                     <div className="main">
@@ -108,6 +112,7 @@ class App extends Component {
                         <Route path="/thunk" component={Thunk} />
                         <Route path="/draggable" component={Draggable} />
                         <Route path="/svg" component={SVG} />
+                        <Route path="/subrouter" component={SubRouter} />
                     </div>
                 </div>
             </Router>

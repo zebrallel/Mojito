@@ -64,7 +64,10 @@ module.exports = {
     devServer: {
         hot: true,
         contentBase: path.resolve(__dirname, 'dist'),
-        port: 8888
+        port: 8888,
+        stats: 'minimal',
+        noInfo: false,
+        historyApiFallback: true
     },
     devtool: 'cheap-module-eval-source-map'
 };
