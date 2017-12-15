@@ -21,6 +21,12 @@ class SubRouter extends React.Component {
                         return <div>this is page : {match.params.pageName}</div>;
                     }}
                 />
+                <Route path="/subrouter/a" component={() => {
+                    return <div>lalalalalala</div>
+                }} />
+                <Route path="/subrouter/a" component={() => {
+                    return <div>fuck</div>
+                }} />
             </div>
         );
     }
