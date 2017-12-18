@@ -21,13 +21,14 @@ import Flex from './pages/Flex/index';
 import Draggable from './pages/Draggable/index';
 import SVG from './pages/SVG';
 import SubRouter from './pages/SubRouter';
+import Mobx from './pages/Mobx';
 
 class App extends Component {
     constructor() {
         super();
 
         this.state = {
-            collapsed: false 
+            collapsed: true 
         };
     }
 
@@ -100,6 +101,9 @@ class App extends Component {
                         <div className="item">
                             <Link to="/subrouter">SubRouter</Link>
                         </div>
+                        <div className="item">
+                            <Link to="/mobx">Mobx</Link>
+                        </div>
                     </div>
                     <div className="main">
                         <Route exact path="/" component={Home} />
@@ -113,6 +117,7 @@ class App extends Component {
                         <Route path="/draggable" component={Draggable} />
                         <Route path="/svg" component={SVG} />
                         <Route path="/subrouter" component={SubRouter} />
+                        <Route path="/mobx" component={Mobx} />
                     </div>
                 </div>
             </Router>
