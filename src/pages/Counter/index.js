@@ -4,32 +4,32 @@
  * @date: 2017/6/12.
  */
 
-import React, { Component } from 'react';
-import { connect } from 'react-redux';
-import { bindActionCreators } from 'redux';
+import React, { Component } from 'react'
+import { connect } from 'react-redux'
+import { bindActionCreators } from 'redux'
 
-import actions from './actions';
+import actions from './actions'
 
 class Counter extends Component {
-    addInput;
-    minusInput;
+    addInput
+    minusInput
 
-    addNumHandler() {
-        const { value } = this.addInput;
-        const { increase } = this.props;
+    addNumHandler = () => {
+        const { value } = this.addInput
+        const { increase } = this.props
 
-        increase(parseInt(value));
+        increase(parseInt(value))
     }
 
-    minusNumHandler() {
-        const { value } = this.minusInput;
-        const { decrease } = this.props;
+    minusNumHandler = () => {
+        const { value } = this.minusInput
+        const { decrease } = this.props
 
-        decrease(parseInt(value));
+        decrease(parseInt(value))
     }
 
     render() {
-        const { count } = this.props;
+        const { count } = this.props
 
         return (
             <div className="m-page">
@@ -38,31 +38,31 @@ class Counter extends Component {
                     <input
                         type="number"
                         ref={dom => {
-                            this.addInput = dom;
+                            this.addInput = dom
                         }}
                     />
-                    <button onClick={::this.addNumHandler}>add</button>
+                    <button onClick={this.addNumHandler}>add</button>
                 </div>
                 <div>
                     <input
                         type="number"
                         ref={dom => {
-                            this.minusInput = dom;
+                            this.minusInput = dom
                         }}
                     />
-                    <button onClick={::this.minusNumHandler}>minus</button>
+                    <button onClick={this.minusNumHandler}>minus</button>
                 </div>
             </div>
-        );
+        )
     }
 }
 
 const mapStateToProps = state => {
-    return { count: state.counter.count };
-};
+    return { count: state.counter.count }
+}
 
 const mapDispatchToProps = dispatch => {
-    return bindActionCreators(actions, dispatch);
-};
+    return bindActionCreators(actions, dispatch)
+}
 
-export default connect(mapStateToProps, mapDispatchToProps)(Counter);
+export default connect(mapStateToProps, mapDispatchToProps)(Counter)
