@@ -17,9 +17,7 @@ import Debounce from './pages/Debounce/index';
 import Ensure from './pages/Ensure/index';
 import HighOrderComponent from './pages/HighOrderComponent/index';
 import Thunk from './pages/Thunk/index';
-import Flex from './pages/Flex/index';
 import Draggable from './pages/Draggable/index';
-import SVG from './pages/SVG';
 import SubRouter from './pages/SubRouter';
 import Mobx from './pages/Mobx';
 
@@ -84,9 +82,6 @@ class App extends Component {
                             <Link to="/ensure">Ensure</Link>
                         </div>
                         <div className="item">
-                            <Link to="/flex">Flex</Link>
-                        </div>
-                        <div className="item">
                             <Link to="/highOrderComponent">HighOrderComponent</Link>
                         </div>
                         <div className="item">
@@ -94,9 +89,6 @@ class App extends Component {
                         </div>
                         <div className="item">
                             <Link to="/draggable">Draggable</Link>
-                        </div>
-                        <div className="item">
-                            <Link to="/svg">SVG</Link>
                         </div>
                         <div className="item">
                             <Link to="/subrouter">SubRouter</Link>
@@ -111,11 +103,9 @@ class App extends Component {
                         <Route path="/counter" component={Counter} />
                         <Route path="/debounce" component={Debounce} />
                         <Route path="/ensure" component={Ensure} />
-                        <Route path="/flex" component={Flex} />
                         <Route path="/highOrderComponent" component={HighOrderComponent} />
                         <Route path="/thunk" component={Thunk} />
                         <Route path="/draggable" component={Draggable} />
-                        <Route path="/svg" component={SVG} />
                         <Route path="/subrouter" component={SubRouter} />
                         <Route path="/mobx" component={Mobx} />
                     </div>

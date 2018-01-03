@@ -10,7 +10,7 @@ class Ensure extends Component {
         }
     }
 
-    load(){
+    load = () => {
         require.ensure([], (require)=>{
             this.state.comps.push(require('./modules/moduleA').default);
             this.setState({});
@@ -23,7 +23,7 @@ class Ensure extends Component {
         return (
             <div className="m-page">
                 <div>Ensure Demo</div>
-                <button onClick={::this.load}>Click me to load modules</button>
+                <button onClick={this.load}>Click me to load modules</button>
                 <div>Component : </div>
                 {
                     comps.map((module, idx)=>{
