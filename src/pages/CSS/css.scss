@@ -4,4 +4,27 @@
         font-size: 20px;
         font-weight: bold;
     }
+
+    .cp-1{
+        .box{
+            position: absolute;
+            top: 20px;
+            bottom: 20px;
+            left: 20px;
+            right: 20px;
+            background: rgba(0,0,0,.5)
+        }
+
+        .parent{
+            box-sizing: border-box;
+            width: 200px;
+            border: #333 solid 10px;
+
+            textarea{
+                height: 30px;
+                width: 100%;
+                box-sizing: border-box;
+            }
+        }
+    }
 }
