@@ -11,9 +11,9 @@ AppState.reset = action(() => {
     AppState.time = 0;
 });
 
-setInterval(action(() => {
-    AppState.time += 1;
-}), 1000);
+// setInterval(action(() => {
+//     AppState.time += 1;
+// }), 1000);
 
 autorun(() => {
     console.log('time: ' + AppState.time);
