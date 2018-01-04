@@ -1,29 +1,152 @@
-#CSS{
-    h1{
+#CSS {
+    h1 {
         margin: 25px 0;
         font-size: 20px;
         font-weight: bold;
     }
 
-    .cp-1{
-        .box{
-            position: absolute;
-            top: 20px;
-            bottom: 20px;
-            left: 20px;
-            right: 20px;
-            background: rgba(0,0,0,.5)
-        }
+    .cp-1 {
+        // .box {
+        //     position: absolute;
+        //     top: 20px;
+        //     bottom: 20px;
+        //     left: 20px;
+        //     right: 20px;
+        //     background: rgba(0, 0, 0, 0.5);
+        // }
 
-        .parent{
+        .parent {
             box-sizing: border-box;
             width: 200px;
             border: #333 solid 10px;
 
-            textarea{
+            textarea {
                 height: 30px;
                 width: 100%;
                 box-sizing: border-box;
+                resize: none;
+            }
+        }
+
+        .box-2 {
+            box-sizing: border-box;
+            margin-top: 20px;
+            width: 200px;
+            max-height: 20px;
+            text-align: center;
+            line-height: 1.4;
+            border: #cba solid 1px;
+            transition: all 0.5s;
+            overflow: hidden;
+
+            &:hover {
+                max-height: 200px; // 这个值不能太大，否则会有延迟的效果
+            }
+        }
+
+        .box-3 {
+            margin-top: 20px;
+
+            .fl {
+                box-sizing: border-box;
+                height: 100px;
+                width: 100px;
+                border: #cba solid 1px;
+                float: left;
+            }
+        }
+
+        .box-4 {
+            span {
+                display: inline-block;
+            }
+        }
+
+        .box-5 {
+            margin-top: 20px;
+
+            img {
+                display: inline-block;
+                width: 200px;
+                height: 100px;
+                color: transparent;
+                position: relative;
+                overflow: hidden;
+
+                &:hover::after {
+                    transform: translateY(0);
+                }
+
+                &::after {
+                    content: attr(alt);
+                    position: absolute;
+                    left: 0;
+                    bottom: 0;
+                    width: 100%;
+                    line-height: 30px;
+                    background-color: rgba(0, 0, 0, 0.5);
+                    color: white;
+                    font-size: 14px;
+                    transform: translateY(100%);
+                    /* 来点过渡动画效果 */
+                    transition: transform 0.2s;
+                    visibility: visible;
+                    text-align: center;
+                }
+
+                &::before {
+                    /* 淡蓝色占位背景 */
+                    content: '';
+                    position: absolute;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    background-color: #f0f3f9;
+                    visibility: visible;
+                }
+            }
+
+            img:not([src]) {
+                /* 隐藏Chrome alt文字以及银色边框 */
+                visibility: hidden;
+                // content: url(http://demo.cssworld.cn/images/common/l/1.jpg)
+            }
+        }
+
+        .box-6{
+            margin-top: 20px;
+
+            dot{
+                display: inline-block;
+                height: 1em;
+                line-height: 1;
+                text-align: left;
+                overflow: hidden;
+                vertical-align: -.25em;
+
+                &::before{
+                    display: block;
+                    content: '...\a..\a.';
+                    white-space: pre-wrap;
+                    animation: dot 3s infinite step-start both;
+                }
+            }
+
+            @keyframes dot {
+                33% {transform: translateY(-2em)}
+                66% {transform: translateY(-1em)}
+            }
+        }
+
+        .box{
+            margin-top: 20px;
+
+            a + a:before{
+                content: '';
+                font-size: 0;
+                padding: 10px 3px 1px;
+                margin-left: 6px;
+                border-left: solid 1px gray;
             }
         }
     }
