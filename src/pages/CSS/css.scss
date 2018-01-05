@@ -149,5 +149,34 @@
                 border-left: solid 1px gray;
             }
         }
+
+        .bx6{
+            margin-top: 100px;
+            width: 100px;
+            height: 50px;
+
+            span{
+                padding: 50%;
+                background: gray;
+            }
+            .icon-menu {
+                display: inline-block;
+                width: 140px; height: 10px;
+                padding: 35px 0;
+                border-top: 10px solid;
+                border-bottom: 10px solid;
+                background-color: currentColor;
+                background-clip: content-box;
+            }
+            .icon-dot {
+                display: inline-block;
+                width: 100px; height: 100px;
+                padding: 10px;
+                border: 10px solid;    
+                border-radius: 50%;
+                background-color: currentColor;
+                background-clip: content-box;
+            }
+        }
     }
 }
