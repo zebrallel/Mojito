@@ -21,6 +21,7 @@ import Draggable from './pages/Draggable/index'
 import SubRouter from './pages/SubRouter'
 import Mobx from './pages/Mobx'
 import CSS from './pages/CSS/css'
+import StyledComponent from './pages/StyledComponent/styledComponent'
 
 class App extends Component {
     constructor() {
@@ -100,6 +101,9 @@ class App extends Component {
                         <div className="item">
                             <Link to="/css">CSS</Link>
                         </div>
+                        <div className="item">
+                            <Link to="/styled">Styled</Link>
+                        </div>
                     </div>
                     <div className="main">
                         <Route exact path="/" component={Home} />
@@ -113,6 +117,7 @@ class App extends Component {
                         <Route path="/subrouter" component={SubRouter} />
                         <Route path="/mobx" component={Mobx} />
                         <Route path="/css" component={CSS} />
+                        <Route path="/styled" component={StyledComponent} />
                     </div>
                 </div>
             </Router>
