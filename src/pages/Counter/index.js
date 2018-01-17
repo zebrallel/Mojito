@@ -10,7 +10,13 @@ import { bindActionCreators } from 'redux'
 
 import actions from './actions'
 
-class Counter extends Component {
+@connect(
+    state => {
+        return { count: state.counter.count }
+    },
+    dispatch => bindActionCreators(actions, dispatch)
+)
+export default class Counter extends Component {
     addInput
     minusInput
 
@@ -56,13 +62,3 @@ class Counter extends Component {
         )
     }
 }
-
-const mapStateToProps = state => {
-    return { count: state.counter.count }
-}
-
-const mapDispatchToProps = dispatch => {
-    return bindActionCreators(actions, dispatch)
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(Counter)
