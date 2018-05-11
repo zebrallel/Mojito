@@ -1,68 +1,28 @@
-import './style.scss';
-import * as React from 'react';
-import { observable, action, autorun } from 'mobx';
-import { observer } from 'mobx-react';
+import './style.scss'
+import * as React from 'react'
+import { observable, action, autorun, computed } from 'mobx'
 
-let AppState = observable({
-    time: 0
-})
+class Mobx extends React.Component {
+    @observable count
 
-AppState.reset = action(() => {
-    AppState.time = 0;
-});
+    constructor(){
+        super()
 
-// setInterval(action(() => {
-//     AppState.time += 1;
-// }), 1000);
-
-autorun(() => {
-    console.log('time: ' + AppState.time);
-})
-
-var todoStore = observable({
-    /* some observable state */
-    todos: [],
-
-    /* a derived value */
-    get completedCount() {
-        return this.todos.filter(todo => todo.completed).length;
+        this.count = [1,2,3,4]
     }
-});
-
-/* a function that observes the state */
-autorun(function() {
-    console.log("Completed %d of %d items",
-        todoStore.completedCount,
-        todoStore.todos.length
-    );
-});
-
-@observer
-class Mobx extends React.Component{
-    onReset = () => {
-        AppState.reset();
+    @computed get total(){
+        return this.count.map((item) => item * item)
     }
-    render(){
-        return (
-            <div id="Mobx">
-                Second: {AppState.time}
-                <button onClick={this.onReset}>reset</button>
-                <div>
-                    <button onClick={() => {
-                        todoStore.todos[0] = {
-                            title: "Take a walk",
-                            completed: false
-                        };
-                    }}>todo button</button>
-                </div>
-                <div>
-                    <button onClick={() => {
-                        todoStore.todos[0].completed = true;
-                    }}>add item</button>
-                </div>
-            </div>
-        )
+    componentDidMount(){
+        console.log(this.count);
+        autorun(() => {
+            console.log(this.total);
+        })
+        this.count.replace([2,3,4,5])
+    }
+    render() {
+        return <div id="Mobx">mobx</div>
     }
 }
 
-export default Mobx;
+export default Mobx
