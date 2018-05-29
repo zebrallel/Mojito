@@ -1,12 +1,12 @@
-const path = require('path');
-const webpack = require('webpack');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const path = require('path')
+const webpack = require('webpack')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
+const MonacoWebpackPlugin = require('monaco-editor-webpack-plugin')
 
 module.exports = {
+    mode: 'development',
     entry: {
-        main: path.resolve(__dirname, 'src/app'),
-        vendors: ['react', 'react-dom', 'redux', 'react-redux', 'react-router-dom']
+        main: path.resolve(__dirname, 'src/app')
     },
     output: {
         path: path.resolve(__dirname, 'dist'),
@@ -22,15 +22,16 @@ module.exports = {
             },
             {
                 test: /\.js$/,
-                use: ["source-map-loader"],
-                enforce: "pre"
+                use: ['source-map-loader'],
+                enforce: 'pre'
+            },
+            {
+                test: /\.css$/,
+                use: ['style-loader', 'css-loader']
             },
             {
                 test: /\.scss$/,
-                use: ExtractTextPlugin.extract({
-                    fallback: 'style-loader',
-                    use: ['css-loader', 'sass-loader']
-                })
+                use: ['style-loader', 'css-loader', 'sass-loader']
             },
             {
                 test: /\.(png|woff|woff2|eot|ttf|svg)$/,
@@ -49,21 +50,13 @@ module.exports = {
         extensions: ['.tsx', '.ts', '.js']
     },
     plugins: [
-        new webpack.DefinePlugin({
-            'process.env.NODE_ENV': '"develop"'
-        }),
-        new ExtractTextPlugin('style.css'),
-        new webpack.optimize.CommonsChunkPlugin({
-            name: 'vendors'
-        }),
         new HtmlWebpackPlugin({
             title: 'Mojito Center',
             template: 'dist/index.ejs'
         }),
-        new webpack.HotModuleReplacementPlugin()
+        new MonacoWebpackPlugin()
     ],
     devServer: {
-        hot: true,
         contentBase: path.resolve(__dirname, 'dist'),
         port: 8888,
         stats: 'minimal',
@@ -71,5 +64,4 @@ module.exports = {
         historyApiFallback: true
     },
     devtool: 'cheap-module-eval-source-map'
-};
-
+}
