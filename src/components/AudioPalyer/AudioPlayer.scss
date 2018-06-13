@@ -1,25 +1,70 @@
 .m-audio-player {
     display: flex;
-    width: 100%;
-    border: #000 solid 1px;
-    line-height: 40px;
+    width: 130px;
+    line-height: 30px;
+    background: #e8e7e7;
 
     .left {
-        width: 50px;
+        width: 40px;
         text-align: center;
         font-size: 0;
 
-        .icon {
+        .icon-play {
             display: inline-block;
             vertical-align: middle;
+            margin-left: 5px;
             width: 0;
             height: 0;
-            border: 10px solid #000;
-            border-color: transparent transparent transparent #000;
+            border: 8px solid #505050;
+            border-color: transparent transparent transparent #505050;
+        }
+
+        .icon-pause {
+            display: inline-block;
+            vertical-align: middle;
+            height: 12px;
+            width: 5px;
+            border-left: #505050 solid 3px;
+            border-right: #505050 solid 3px;
         }
     }
 
     .right {
         flex: 1;
+        font-size: 12px;
+
+        .waving {
+            span {
+                display: inline-block;
+                width: 12px;
+                margin-left: 2px;
+                border-radius: 2px;
+                background: #abc;
+                vertical-align: -5px;
+                animation: load 1s ease infinite;
+
+                &:nth-child(2) {
+                    animation-delay: 0.2s;
+                }
+                &:nth-child(3) {
+                    animation-delay: 0.4s;
+                }
+                &:nth-child(4) {
+                    animation-delay: 0.6s;
+                }
+                &:nth-child(5) {
+                    animation-delay: 0.8s;
+                }
+            }
+        }
+        @keyframes load {
+            0%,
+            100% {
+                height: 3px;
+            }
+            50% {
+                height: 15px;
+            }
+        }
     }
 }
