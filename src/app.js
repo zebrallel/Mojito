@@ -23,7 +23,7 @@ import Mobx from './pages/Mobx'
 import CSS from './pages/CSS/css'
 import StyledComponent from './pages/StyledComponent/styledComponent'
 import ZScroller from './pages/ZScroller/ZScroll'
-import Editor from './pages/Editor/Editor'
+import Audio from './pages/Audio/Audio'
 
 class App extends Component {
     render() {
@@ -43,7 +43,7 @@ class App extends Component {
                     <Route path="/css" component={CSS} />
                     <Route path="/styled" component={StyledComponent} />
                     <Route path="/zscroller" component={ZScroller} />
-                    <Route path="/editor" component={Editor} />
+                    <Route path="/audio" component={Audio} />
                 </div>
             </Router>
         )
